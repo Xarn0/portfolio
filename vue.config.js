@@ -14,3 +14,9 @@ module.exports = {
       .end();
   },
 };
+
+
+
+module.exports={
+  publicPath:"/portfilio/"
+}
