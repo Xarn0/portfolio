@@ -18,5 +18,5 @@ module.exports = {
 
 
 module.exports={
-  publicPath:"/portfilio/"
+  publicPath:'/portfolio/'
 }
