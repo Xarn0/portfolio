@@ -1,0 +1,39 @@
+mixin CreateBtn(text)
+    button.project__btn=text
+mixin CreateH(text,view)
+    div.project__header
+        h3=text 
+        span.line
+        if view == true
+            router-link(:to="{name:'works'}").link-class-project.
+                view all <span class="link-class-project-i">~~></span>
+
+
+//- создает карты проекта принимает картинку, инструменты,название проекта, описание проекта , название кнопок
+
+mixin CreatCard(img,text__tools,nameProject,descriptionProject,btn,two=false, btn1='')
+    .card 
+        div.card__header 
+            img(src=img, alt="")
+        .card__main
+            p=text__tools
+
+        .card__footer
+            h5=nameProject
+            p=descriptionProject
+            .card__btns 
+                +CreateBtn(btn)
+                if two == true
+                    +CreateBtn(btn1)
+
+
+
+mixin CreateSkill(width,text,img)
+     .skill-conteiner 
+        .skill-conteiner__line(style="width:" + (width) + "%")
+            .skill-conteiner__line-animation
+                .skill-conteiner__img
+                    img(src=img, alt="")
+                .skill-conteiner__text
+                    span=text
+                    span=(width + "%")
